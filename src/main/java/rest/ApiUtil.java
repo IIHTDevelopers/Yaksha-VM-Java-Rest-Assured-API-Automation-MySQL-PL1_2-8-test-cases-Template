@@ -12,10 +12,8 @@ public class ApiUtil {
 	 * @Test1 This method retrieves and verifies the list of stocks.
 	 * 
 	 * @param endpoint - The API endpoint to which the GET request is sent.
-	 * @param body     - Optional
-	 * @return CustomResponse - The API response includes HTTP status code, status
-	 *         message, and a list of stocks in the "Results" field, containing
-	 *         details such as ItemID, ItemName, SalePrice, and CostPrice.
+	 * @param body     - Optional request body
+	 * @return CustomResponse - Contains response, statusCode, status, itemIds, itemNames and genericNames.
 	 */
 	public CustomResponse getAllStocks(String endpoint, Object body) {
 		// write your code here
@@ -36,11 +34,8 @@ public class ApiUtil {
 	 * @Test2 This method retrieves and verifies the details of the main store.
 	 * 
 	 * @param endpoint - The API endpoint to which the GET request is sent.
-	 * @param body     - Optional
-	 * @return CustomResponse - The API response includes the HTTP status code,
-	 *         status message, and details of the main store in the "Results" field,
-	 *         containing details such as StoreId, ParentStoreId, Category, and
-	 *         IsActive.
+	 * @param body     - Optional request body
+	 * @return CustomResponse - Contains response, statusCode, status, storeId, category and isActive.
 	 */
 	public CustomResponse getMainStore(String endpoint, Object body) {
 		// write your code here
@@ -61,11 +56,8 @@ public class ApiUtil {
 	 * @Test3 This method retrieves and verifies the requisition list by date range.
 	 * 
 	 * @param endpoint - The API endpoint to which the GET request is sent.
-	 * @param body     - Optional
-	 * @return CustomResponse - The API response includes the HTTP status code,
-	 *         status message, and requisition list in the "Results" field,
-	 *         containing details such as RequisitionId, RequisitionNo, and
-	 *         RequisitionStatus.
+	 * @param body     - Optional request body
+	 * @return CustomResponse - Contains response, statusCode, status, requisitionNos, requisitionStatuses and requisitionIds.
 	 */
 	public CustomResponse getRequisitionByDateRange(String endpoint, Object body) {
 		// write your code here
@@ -86,11 +78,8 @@ public class ApiUtil {
 	 * @Test4 This method retrieves and verifies the patient consumptions list.
 	 * 
 	 * @param endpoint - The API endpoint to which the GET request is sent.
-	 * @param body     - Optional
-	 * @return CustomResponse - The API response includes the HTTP status code,
-	 *         status message, and the patient consumptions list in the "Results"
-	 *         field, containing details such as PatientId, HospitalNo, and
-	 *         PatientVisitId.
+	 * @param body     - Optional request body
+	 * @return CustomResponse - Contains response, statusCode, status, patientIds, hospitalNos and patientVisitIds.
 	 */
 	public CustomResponse getPatientConsumptions(String endpoint, Object body) {
 		// write your code here
@@ -112,11 +101,8 @@ public class ApiUtil {
 	 *        information.
 	 * 
 	 * @param endpoint - The API endpoint to which the GET request is sent.
-	 * @param body     - Optional
-	 * @return CustomResponse - The API response includes the HTTP status code,
-	 *         status message, and the patient consumption information in the
-	 *         "Results" field, containing details such as PatientName, HospitalNo,
-	 *         and StoreId.
+	 * @param body     - Optional request body
+	 * @return CustomResponse - Contains response, statusCode, status, patientName, hospitalNo and storeId.
 	 */
 	public CustomResponse getPatientConsumptionInfoByPatientIdAndVisitId(String endpoint, Object body) {
 		// write your code here
@@ -137,9 +123,8 @@ public class ApiUtil {
 	 * @Test6 This method retrieves and verifies the billing scheme by scheme ID.
 	 * 
 	 * @param endpoint - The API endpoint to which the GET request is sent.
-	 * @param body     - Optional
-	 * @return CustomResponse - Contains HTTP status, status message, and Results
-	 *         field, including SchemeCode, SchemeName, and SchemeId.
+	 * @param body     - Optional request body
+	 * @return CustomResponse - Contains response, statusCode, status, schemeCode, schemeName and schemeId.
 	 */
 	public CustomResponse getBillingSchemeBySchemeId(String endpoint, Object body) {
 		// write your code here
@@ -160,9 +145,8 @@ public class ApiUtil {
 	 * @Test7 This method retrieves and verifies the billing summary by patient ID.
 	 * 
 	 * @param endpoint - The API endpoint to which the GET request is sent.
-	 * @param body     - Optional
-	 * @return CustomResponse - Contains HTTP status, status message, and Results
-	 *         field, including PatientId, TotalDue, and other billing details.
+	 * @param body     - Optional request body
+	 * @return CustomResponse - Contains response, statusCode, status, patientId and totalDue.
 	 */
 	public CustomResponse getBillingSummaryByPatientId(String endpoint, Object body) {
 		// write your code here
@@ -183,10 +167,8 @@ public class ApiUtil {
 	 *        by ID.
 	 * 
 	 * @param endpoint - The API endpoint to which the GET request is sent.
-	 * @param body     - Optional
-	 * @return CustomResponse - Contains HTTP status, status message, and Results
-	 *         field, including PatientConsumptionId, ConsumptionReceiptNo, and
-	 *         TotalAmount.
+	 * @param body     - Optional request body
+	 * @return CustomResponse - Contains response, statusCode, status, patientConsumptionIds, consumptionReceiptNos and totalAmounts.
 	 */
 	public CustomResponse getConsumptionsListOfAPatientById(String endpoint, Object body) {
 		// write your code here
