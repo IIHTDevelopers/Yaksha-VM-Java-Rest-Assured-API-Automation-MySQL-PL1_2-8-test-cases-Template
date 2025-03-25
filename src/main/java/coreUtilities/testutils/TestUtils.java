@@ -39,7 +39,7 @@ public class TestUtils {
 	public static File exceptionTestFile;
 	public static File xmlFile;
 
-	public static final String GUID = "6ed39465-d6d3-4ec4-b27d-1dcb870b2992";
+	public static final String GUID = "812147b9-bb0b-4c74-876e-ae4a45374d9a";
 	public static String customData;
 	public static final String URL =  "https://compiler.techademy.com/v1/mfa-results/push";
 
