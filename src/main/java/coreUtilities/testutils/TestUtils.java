@@ -39,7 +39,7 @@ public class TestUtils {
 	public static File exceptionTestFile;
 	public static File xmlFile;
 
-	public static final String GUID = "812147b9-bb0b-4c74-876e-ae4a45374d9a";
+	public static final String GUID = "6ed39465-d6d3-4ec4-b27d-1dcb870b2992";
 	public static String customData;
 	public static final String URL =  "https://compiler.techademy.com/v1/mfa-results/push";
 
@@ -97,18 +97,21 @@ public class TestUtils {
 			e.printStackTrace();
 			System.out.println(e.getMessage());
 		}
-		
+
 		String hostName = System.getenv("HOSTNAME");
 		String AttemptId = System.getenv("ATTEMPT_ID");
+		String filePath = TestUtils.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+
 
 		testResults.setTestCaseResults(asJsonString(testCaseResults));
 		testResults.setCustomData(customData);
-		testResults.setHosttName(hostName);
+		testResults.setHostName(hostName);
 		testResults.setAttemptId(AttemptId);
+		testResults.setFilePath(filePath);
+
 
 		int length = 0;
 		if(customData != null) {length = customData.length(); }
-
 
 		try {
 
@@ -126,11 +129,9 @@ public class TestUtils {
 			os.close();
 
 			int responseCode = conn.getResponseCode();
-			if (!(responseCode == HttpURLConnection.HTTP_OK  || responseCode == HttpURLConnection.HTTP_CREATED)) { 
+			if (!(responseCode == HttpURLConnection.HTTP_OK  || responseCode == HttpURLConnection.HTTP_CREATED)) {
 				System.out.println(RED_BOLD_BRIGHT + "⚠️ Unable to push test cases,please try again! [" + responseCode +"|" + hostName +"|" + AttemptId + "|" + length + "]" + TEXT_RESET);
 			}
-
-
 
 			// BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
 
